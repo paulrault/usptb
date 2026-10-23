@@ -732,3 +732,6 @@ tr.club-row td {
   color: var(--text-muted);
   margin: 0.35rem 0 1rem;
 }
+
+/* discipline */
+#discipline .info-label { min-width: 9rem; }
