@@ -34,7 +34,6 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--bg);
-  /* Fond dégradé subtil + motif discret type pelouse */
   background-image:
     linear-gradient(160deg, #e8f4f1 0%, #f0f4f8 40%, #e6eef5 100%),
     repeating-linear-gradient(
@@ -54,7 +53,7 @@ body {
 header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   color: #fff;
-  padding: 1.5rem 1.25rem 1.25rem;
+  padding: 1.25rem 1.25rem 1.1rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -69,30 +68,42 @@ header::before {
   pointer-events: none;
 }
 
-header a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.05em;
+.logo-link {
+  display: inline-block;
   position: relative;
   z-index: 1;
+  text-decoration: none;
+  margin-bottom: 0.35rem;
 }
 
-header a:hover {
-  color: #fff;
+.logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #1abc9c;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo-link:hover .logo {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(26, 188, 156, 0.4);
 }
 
 header h1 {
-  margin: 0.4rem 0 0.25rem;
-  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  margin: 0.5rem 0 0.25rem;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   position: relative;
   z-index: 1;
 }
 
-header p {
+header .tagline {
   margin: 0;
   font-size: 0.95rem;
   opacity: 0.85;
@@ -110,6 +121,7 @@ nav {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0;
 }
 
 nav a {
@@ -129,14 +141,6 @@ nav a:focus {
   background: var(--accent);
   color: var(--primary);
   outline: none;
-}
-
-/* Séparateurs | dans la nav d'origine → on les masque via CSS si présents */
-nav {
-  font-size: 0; /* cache les | texte */
-}
-nav a {
-  font-size: 0.9rem;
 }
 
 /* ===== MAIN ===== */
@@ -331,6 +335,11 @@ footer p {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
+  .logo {
+    width: 72px;
+    height: 72px;
+  }
+
   nav a {
     display: block;
     margin: 0.2rem 0;
@@ -356,4 +365,9 @@ footer p {
 :focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
