@@ -647,3 +647,16 @@ img {
     min-width: 100%;
   }
 }
+
+/* Ligne du club mise en avant dans les classements */
+tr.club-row td {
+  background: var(--accent-soft) !important;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.update-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
