@@ -62,6 +62,31 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </section>
+
+    <section>
+      <div class="section-head">
+        <span class="card-icon" aria-hidden="true">🔄</span>
+        <h2 style="border:none;padding:0;margin:0;display:inline">Matchs en direct</h2>
+      </div>
+      <p class="page-intro">Résultats et prochains matchs (toutes catégories) — mise à jour automatique via SportCorico.</p>
+      <div class="embed-wrap" style="min-height:360px">
+        <iframe
+          src="https://www.sportcorico.com/widget/a30d38fb-8f52-4fb2-b7d4-49ba0f3de55a"
+          width="100%"
+          id="sportcorico-home"
+          title="Matchs USPTB — SportCorico"
+          style="border:none;width:100%;min-height:420px"
+          loading="lazy"></iframe>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
+      <script>
+        if (typeof iFrameResize === "function") {
+          iFrameResize({ log: false, checkOrigin: false }, "#sportcorico-home");
+        }
+      </script>
+      <p class="embed-note"><a href="competitions.html">Voir toutes les compétitions →</a></p>
+    </section>
+
   </main>
   <footer>
     <p><a href="index.html">Accueil USPTB</a> | <a href="contact.html">Contact</a></p>
